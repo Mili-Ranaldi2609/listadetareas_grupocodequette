@@ -1,31 +1,39 @@
 {
-    "backlog": {
-     "tareas": [
-     {
-     "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
-     "titulo": "Tarea backlog",
-     "descripcion": "Descripcion tarea backlog",
-     "estado": "pendiente",
-     "fechaLimite": "2025-03-05"
-     }
-     ]
-    },
-    "sprintList": {
-     "sprints": [
-     {
-     "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
-     "fechaInicio": "2025-03-04",
-     "fechaCierre": "2025-03-11",
-     "nombre": "Sprint 122",
-     "tareas": [
-     {
-     "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
-     "titulo": "Tarea 2",
-     "descripcion": "Estamos aca",
-     "estado": "pendiente",
-     "fechaLimite": "2025-03-06"
-     }
-     ]
-     }
-     ]}}
-    
+  "backlog": {
+    "tareas": [
+      {
+        "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
+        "titulo": "Tarea backlog",
+        "descripcion": "Descripcion tarea backlog",
+        "estado": "pendiente",
+        "fechaLimite": "2025-03-05"
+      },
+      {
+        "titulo": "titulo nuevo",
+        "descripcion": "holaaaaaaaaaaaaa",
+        "fechaLimite": "2025-03-29",
+        "estado": "en proceso",
+        "id": "Thu Mar 27 2025"
+      }
+    ]
+  },
+  "sprintList": {
+    "sprints": [
+      {
+        "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
+        "fechaInicio": "2025-03-04",
+        "fechaCierre": "2025-03-11",
+        "nombre": "Sprint 122",
+        "tareas": [
+          {
+            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
+            "titulo": "Tarea 2",
+            "descripcion": "Estamos aca",
+            "estado": "pendiente",
+            "fechaLimite": "2025-03-06"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,8 +1,9 @@
-import { TareasScreen } from "./components/screens/TareasScreen"
+import { TareaScreen } from "./components/screens/TareasScreen"
+
 
 function App() {
   return (
-    <TareasScreen/>
+    <TareaScreen/>
   )
 }
 

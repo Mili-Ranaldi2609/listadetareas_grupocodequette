@@ -1,0 +1,36 @@
+.containerCard{
+    width: 100%;
+    border-radius: 0.4rem;
+    padding: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    max-height: 20vh;
+
+}
+.Card{
+    display: flex;
+    flex-direction:column;
+    padding: 0.4rem;
+    gap: 0.4rem;
+    justify-items: flex-end;
+}
+.CardButtons{
+    display:grid;
+    padding: 0.4rem;
+    gap: 0.8rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.4rem;
+}
+.CardButtons button{
+    border-radius: 0.4rem;
+    box-shadow: 3px 3px 5px #302f2f;
+    
+}
+.CardButtons button:hover{
+    cursor: pointer;
+    background-color: rgba(8, 8, 8, 0.6); /* Color más oscuro al pasar el mouse */
+    color: white;
+    transition: background-color 0.3s ease-in-out; /* Efecto de transición suave */
+}

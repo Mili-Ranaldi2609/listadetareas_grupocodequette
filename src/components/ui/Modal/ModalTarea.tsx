@@ -1,74 +1,75 @@
 import { ChangeEvent, FC, FormEvent, useEffect, useState } from "react"
 import { tareaStore } from "../../../store/tareaStore"
-
+import styles from "./Modal.module.css"
 import { ITarea } from "../../../types/ITareas"
 import { useTareas } from "../../../hooks/useTarea"
 
-
-type IModal={
-    handleCloseModal:VoidFunction
+type IModal = {
+    handleCloseModal: VoidFunction
 }
-const initialState:ITarea={
-    titulo:'',
-    descripcion:'',
-    fechaLimite:'',
-    estado:''
 
+const initialState: ITarea = {
+    titulo: '',
+    descripcion: '',
+    fechaLimite: '',
+    estado: "" // Estado inicial vacío
 }
-export const ModalTarea:FC<IModal>=({handleCloseModal})=>{
-    const tareaActiva=tareaStore((state)=>state.tareaActiva)
-    const setTareaActiva=tareaStore((state)=>state.setTareaActiva)
-    const{crearTarea,putTareaEditar}=useTareas()
-    //estado
-    const[formValues,setFormValues]=useState<ITarea>(initialState)
 
-    useEffect(()=>{
+export const ModalTarea: FC<IModal> = ({ handleCloseModal }) => {
+    const tareaActiva = tareaStore((state) => state.tareaActiva)
+    const setTareaActiva = tareaStore((state) => state.setTareaActiva)
+    const { createTarea, updateTarea } = useTareas()
+
+    const [formValues, setFormValues] = useState<ITarea>(initialState)
+
+    useEffect(() => {
         if (tareaActiva) setFormValues(tareaActiva)
-    },[])
-    ///podemos manejar toodos los inputs, modificando el estado tanto de una tarea nueva o una ya hecha 
-    //modificar tarea
-    const handleChange=(e:ChangeEvent<HTMLInputElement |HTMLTextAreaElement| HTMLSelectElement>)=>{
-        //desestructurar
-        const{name,value}=e.target
-        //nos permitira modificar el value
-        setFormValues((prev)=>({...prev,[`${name}`]:value}))
+    }, [])
+
+    // Manejo de inputs y select
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target
+        setFormValues((prev) => ({ ...prev, [name]: value }))
     }
-    //guardar el formulario
-    const handleSubmit=(e:FormEvent)=>{
+
+    // Guardar formulario
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault()
         if (tareaActiva) {
-            putTareaEditar(formValues)
-        }else{
-            crearTarea({...formValues,id: new Date().toDateString()})
+            updateTarea(formValues)
+        } else {
+            createTarea({ ...formValues, id: new Date().toDateString() })
         }
         setTareaActiva(null)
         handleCloseModal()
-
     }
-    return <div >
-        <div >
-        <div >
-            <h3>{tareaActiva?"Editar Tarea":"Crear Tarea"} </h3>
-        </div>
-        {/*on submit envia el formulario*/}
-        <form onSubmit={handleSubmit} >
-            <div >
-            <input onChange={handleChange} value={formValues.titulo} type="text" required autoComplete="off" placeholder="Ingrese el Titulo" name="titulo"/>
-            <textarea onChange={handleChange} value={formValues.descripcion} placeholder="Ingrese una descripcion" required name="descripcion" ></textarea>
-            <input onChange={handleChange} value={formValues.fechaLimite} type="date" required autoComplete="off" name="fechaLimite"/>
-            <select onChange={handleChange} value={formValues.estado} name="estado" required>
-                <option value="">Seleccione un estado</option>
-                <option value="pendiente">Pendiente</option>
-                <option value="en_proceso">En proceso</option>
-                <option value="terminada">Terminada</option>
-            </select>
 
+    return (
+        <div className={styles.containerPrincipalModal}>
+            <div className={styles.contendPopUp}>
+                <div>
+                    <h3>{tareaActiva ? "Editar Tarea" : "Crear Tarea"} </h3>
+                </div>
+                <form onSubmit={handleSubmit} className={styles.formContent}>
+                    <div>
+                        <input onChange={handleChange} value={formValues.titulo} type="text" required autoComplete="off" placeholder="Ingrese el Titulo" name="titulo" />
+                        <textarea onChange={handleChange} value={formValues.descripcion} placeholder="Ingrese una descripción" required name="descripcion"></textarea>
+                        <input onChange={handleChange} value={formValues.fechaLimite} type="date" required autoComplete="off" name="fechaLimite" />
+                        {/* Select para Estado */}
+                        <select name="estado" value={formValues.estado} onChange={handleChange} required>
+                            <option value="">Selecciona un estado</option>
+                            <option value="pendiente">Pendiente</option>
+                            <option value="en proceso">En Proceso</option>
+                            <option value="completada">Completada</option>
+                        </select>
+                    </div>
+                    <div className={styles.buttonCard}>
+                        <button onClick={handleCloseModal}>Cancelar</button>
+                        <button type="submit">{tareaActiva ? "Editar Tarea" : "Crear Tarea"}</button>
+                    </div>
+                </form>
             </div>
-            <div>
-                <button onClick={handleCloseModal}>Cancelar</button>
-                <button type="submit">{tareaActiva?"Editar Tarea":"Crear Tarea"}</button>
-            </div>
-        </form>
         </div>
-    </div>
+    )
 }
+    

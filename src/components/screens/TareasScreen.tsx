@@ -1,15 +1,13 @@
+import { Backlog } from "../ui/Backlog/Backlog"
 import { Header } from "../ui/Header/Header"
-import { ListTareas } from "../ui/ListTareas/ListTareas"
 
-export const TareasScreen =()=>{
 
-    return (<div>
+export const TareaScreen=()=>{
     
-    <Header/>
-    <ListTareas/>
-
-    </div>
+    return(
+        <div>
+            <Header/>
+            <Backlog/>
+        </div>
     )
-
-
 }

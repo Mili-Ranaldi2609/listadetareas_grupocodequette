@@ -1,68 +1,78 @@
 import { useShallow } from "zustand/shallow"
 import { tareaStore } from "../store/tareaStore"
-import { editarTarea, eliminarTareaPorId, getAllTareas, postNuevaTarea } from "../http/tareas"
+import { editarTarea, eliminarTareaPorID, getAllTareas, postNuevaTarea } from "../http/tareas"
 import { ITarea } from "../types/ITareas"
 import Swal from "sweetalert2"
 
-export const useTareas= ()=>{
-    const {tareas, setArrayTarea, agregarNuevaTarea, eliminarUnaTarea, editarTarea}= tareaStore(useShallow((state)=> ({
-        tareas: state.tareas,
-        setArrayTarea: state.setArrayTareas,
-        agregarNuevaTarea: state.agregarNuevaTarea,
-        eliminarUnaTarea: state.eliminarUnaTarea,
-        editarTarea: state.editarUnaTarea
+export const useTareas=()=>{
+    //cuando hacemos un getAll tenemos que meter las tareas directamente desde aca 
+    const{tareas,setTareas,agregarNuevaTarea,eliminarTarea,editarTarea}=tareaStore(useShallow((state)=>({
+        tareas:state.tareas,
+        setTareas:state.setArrayTareas,
+        agregarNuevaTarea:state.agregarNuevaTarea,
+        eliminarTarea:state.eliminarTarea,
+        editarTarea:state.editarTarea 
     })))
-    const getTareas= async()=>{
-        const data=await getAllTareas()
-        if (data) setArrayTarea(data);
-    }
-    const crearTarea =async(nuevaTarea:ITarea)=>{
-        agregarNuevaTarea(nuevaTarea);
-        try{
-            const data =await postNuevaTarea(nuevaTarea)
-            Swal.fire("Tarea creada correctamente")
-        }catch(error){
-            eliminarUnaTarea(nuevaTarea.id!)
-            console.log("algo salio mal al crear la tarea")
+    //funcion que trae las tareas
+    const getTareas=async()=>{
+        const data= await getAllTareas()
+            if (data)setTareas(data)
         }
+    //funcion que crea una tarea
+    const createTarea=async(nuevaTarea:ITarea)=>{
+        agregarNuevaTarea(nuevaTarea)
+       try {
+        await postNuevaTarea(nuevaTarea)
+        Swal.fire('¡Exito!','Tarea creada correctamente','success')
+       } catch (error) {
+        eliminarTarea(nuevaTarea.id!)
+        console.log(error," - algo salio mal al crear la tarea");
+       }
+
     }
-    const putTareaEditar =async(tareaEditada:ITarea)=>{
-        const estadoPrevio=tareas.find((el)=>el.id === tareaEditada.id)
-    
+     //funcion que edita una tarea
+     const updateTarea=async(tareaEditada:ITarea)=>{
+        //si algo me llegara a salir mal yo necesito volver a un estado anterior
+        const estadoPrevio=tareas.find((el)=>el.id===tareaEditada.id)
         editarTarea(tareaEditada)
         try {
             await editarTarea(tareaEditada)
-            Swal.fire("Tarea editada correctamente")
+            Swal.fire('¡Exito!','Tarea editada correctamente','success')
         } catch (error) {
-           if (estadoPrevio) editarTarea(estadoPrevio);
-           console.log("algo salio mal al editar")
+           if(estadoPrevio) editarTarea(estadoPrevio)
+            console.log(error,' - algo salio mal al editar');
         }
-    }
-    const eliminarTarea =async(idTarea: string)=>{
-        const estadoPrevio=tareas.find((el)=>el.id === idTarea)
-        const confirm= await Swal.fire({
-            title:"Estas seguro?",
-            text:"Esta accion no se puede deshacer",
-            icon:"warning",
+     }
+     //funcion que elimina una tarea
+     const deleteTarea=async(idTarea:string)=>{
+        //si algo me llegara a salir mal yo necesito volver a un estado anterior
+        const estadoPrevio=tareas.find((el)=>el.id===idTarea)
+        //alert de confirmar para eliminar una tarea
+        const confirm=await Swal.fire({
+            title:'¿Estas Seguro?',
+            text:'Esta accion no se puede deshacer',
+            icon:'warning',
             showCancelButton:true,
-            confirmButtonText:"Eliminar",
-            cancelButtonText:"Cancelar"
+            confirmButtonText:'Si, Eliminar',
+            cancelButtonText:'Cancelar'
         })
-        if(!confirm.isConfirmed) return;
+        if(!confirm.isConfirmed)return
         eliminarTarea(idTarea)
-        try {
-            await eliminarTareaPorId(idTarea)
-            Swal.fire("Tarea eliminada")
-        } catch (error) {
-            if(estadoPrevio) agregarNuevaTarea(estadoPrevio)
-            console.log("algo salio mal al eliminar" )
-        }
-    }
+       try {
+        await eliminarTareaPorID(idTarea)
+        Swal.fire('Eliminado','La tarea se elimino correctamente','success')
+       } catch (error) {
+        if(estadoPrevio) editarTarea(estadoPrevio)
+        console.log(error,' - algo salio mal al eliminar');
+       }
+ 
+     }
     return{
+        //exporta nuestro hook
         getTareas,
-        crearTarea,
-        putTareaEditar,
-        eliminarTarea,
+        createTarea,
+        updateTarea,
+        deleteTarea,
         tareas
     }
 }

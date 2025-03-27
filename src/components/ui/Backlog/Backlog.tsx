@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react"
 import { tareaStore } from "../../../store/tareaStore"
-
-
-import { ITarea } from "../../../types/ITareas"
+import styles from "./Backlog.module.css"
 import { useTareas } from "../../../hooks/useTarea"
-import { ModalTarea } from "../Modal/ModalTarea"
+import { ITarea } from "../../../types/ITareas"
 import { CardTarea } from "../CardTarea/CardTarea"
-
+import { ModalTarea } from "../Modal/ModalTarea"
 ///Llamamos la funcion que trae todas las tareas de la base de datos las setea el estado y podemos mostrarlo por pantalla
-export const ListTareas=()=>{
+export const Backlog=()=>{
    
     //seteo tarea activa
     const setTareaActiva=tareaStore((state)=>state.setTareaActiva)
@@ -30,14 +28,14 @@ export const ListTareas=()=>{
     }
     return(
      <>
-      <div>
-         <div >
-            <h2>Backlog</h2>
+      <div className={styles.containerPrincipalListTareas}>
+         <div className={styles.containerTitleAndButton}>
+            <h2>Lista de tareas</h2>
             <button onClick={()=>{
                 setOpenModalTarea(true)
             }}>Agregar Tarea</button>
          </div>
-         <div >
+         <div className={styles.containerList}>
             {   //se muestran las tareas por pantalla
                 tareas.length>0?
                 //implementamos el card list
