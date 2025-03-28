@@ -64,8 +64,9 @@ export const ModalTarea: FC<IModal> = ({ handleCloseModal }) => {
                         </select>
                     </div>
                     <div className={styles.buttonCard}>
-                        <button onClick={handleCloseModal}>Cancelar</button>
-                        <button type="submit">{tareaActiva ? "Editar Tarea" : "Crear Tarea"}</button>
+                        <button className={styles.button1}onClick={handleCloseModal}>Cancelar</button>
+                        <button className={styles.button2}
+                        type="submit">{tareaActiva ? "Editar Tarea" : "Crear Tarea"}</button>
                     </div>
                 </form>
             </div>

@@ -1,4 +1,6 @@
-.ContainerPrincipalModal{
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+.containerPrincipalModal{
     position: absolute;
     top: 0;
     left: 0;
@@ -7,50 +9,85 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    backdrop-filter:brightness(90%) blur(2px);
-    border-radius: 1rem;
+    backdrop-filter: brightness(90%) blur(2px);
 }
-.contentPopUp{
-    background-color: #cbc4c4;
-    box-shadow: 5px 2px 10px #302f2f;
-    width: 30vw;
+.contendPopUp{
+    background-color: #fff;
+    box-shadow: 5px 2px 10px #7e7e7e;
+    width: 35vws;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
     justify-content: space-around;
     padding: 1rem;
-    border-radius: 0.4rem;
-
+    border-radius: .4rem;
 }
-.formContentModal{
+.formContent {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     gap: 1rem;
 }
-.formContentModal input,textarea{
-    width: 95%;
-    padding: 4%;
-    max-width: 30vw;
-    gap: 1rem;
+
+.formContent input, 
+.formContent textarea, 
+.formContent select {
+    width: 100%;
+    padding: .3rem;
     resize: none;
-    margin: 0.2rem -0.2rem ;
-    border-radius: 0.4rem;
-    box-shadow: 5px 2px 10px #302f2f;
- 
+    margin: .4rem 0;
+    border: 2px solid #00BFFF; /* Borde celeste */
+    border-radius: 10px; /* Bordes redondeados */
+    outline: none; /* Quita el borde azul por defecto en los inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+/* Efecto cuando el usuario hace clic en el input */
+.formContent input:focus, 
+.formContent textarea:focus, 
+.formContent select:focus {
+    border-color: #1E90FF; /* Azul más fuerte al enfocar */
+    box-shadow: 0 0 8px rgba(30, 144, 255, 0.6); /* Brillo azul al hacer focus */
+}
+
+
+.buttonCard{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 
 }
-.buttonCardModal{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    border-radius: 0.4rem;
-    width: 100%;
+.button1{
+    background-color: pink; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 12px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
 }
-.buttonCardModal button:hover{
-    cursor: pointer;cursor: pointer;
-    background-color: rgba(8, 8, 8, 0.6); /* Color más oscuro al pasar el mouse */
-    color: white;
-    transition: background-color 0.3s ease-in-out; /* Efecto de transición suave */
+.button1:hover {
+    background-color: hotpink; /* Cambia el color */
+    cursor:pointer; /* Cambia el cursor */
+    transform: scale(1.05); /* Hace que el botón crezca un poco */
+}
+.button2{
+    background-color: rgb(194, 83, 194);
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 12px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+}
+
+.button2:hover {
+    background-color: #8623cd;
+    cursor:pointer; /* Cambia el cursor */
+    transform: scale(1.05); /* Hace que el botón crezca un poco */
 }

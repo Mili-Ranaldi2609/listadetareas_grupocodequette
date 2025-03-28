@@ -1,0 +1,14 @@
+.sprint_container {
+    top: .4rem; /* Alinea al inicio de la pantalla (parte superior) */
+    left: 0; /* Alinea al inicio de la pantalla (lado izquierdo) */
+   
+    padding: 1rem;
+    
+  }
+
+  .sprint_header h1 {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+  }
+  

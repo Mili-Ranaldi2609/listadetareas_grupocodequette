@@ -1,0 +1,35 @@
+.tarea_container {
+    display: grid;
+    grid-template-rows: auto 1fr; /* La primera fila para el header y la segunda para el contenido */
+    grid-template-columns: 1fr; /* Solo una columna para el contenedor principal */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    margin: 0;
+}
+
+.header {
+    grid-row: 1 / 2; /* El header ocupa la primera fila */
+}
+
+.contenido {
+    display: grid;
+    grid-template-columns: 18vw 1fr; /* El sprint-menu ocupa el 22% y el backlog ocupa el resto */
+    grid-gap: 1rem; /* Espacio entre el sprint-menu y el backlog */
+    height: 100%; /* Asegura que el contenido ocupe todo el espacio */
+}
+
+.sprint_menu {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-right: 2px solid #ddd;
+    width: 100%; /* El menú de sprint ocupa el 22% del ancho del contenido */
+    height: 100vh;
+   
+}
+
+.backlog {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}

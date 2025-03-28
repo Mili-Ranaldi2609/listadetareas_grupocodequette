@@ -30,10 +30,10 @@ export const Backlog=()=>{
      <>
       <div className={styles.containerPrincipalListTareas}>
          <div className={styles.containerTitleAndButton}>
-            <h2>Lista de tareas</h2>
+             <h2>Tareas en el Backlog</h2>
             <button onClick={()=>{
                 setOpenModalTarea(true)
-            }}>Agregar Tarea</button>
+            }}>Agregar Tarea +</button>
          </div>
          <div className={styles.containerList}>
             {   //se muestran las tareas por pantalla

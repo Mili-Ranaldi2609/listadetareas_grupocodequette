@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+
+.containerHeader{
+    width: 100vw;
+    height: 60px;
+    background-color: rgb(239, 197, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.containerTitleHeader{
+    text-align:left;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+}

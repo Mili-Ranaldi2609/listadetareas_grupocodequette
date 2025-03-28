@@ -1,36 +1,92 @@
-.containerCard{
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+.containerCard {
+    display: flex;
+    flex-direction: row; /* Distribuye los elementos en fila (horizontalmente) */
+    align-items: center;
     width: 100%;
     border-radius: 0.4rem;
     padding: 0.4rem;
-    display: flex;
     justify-content: space-between;
-    background-color: white;
-    max-height: 20vh;
-
-}
-.Card{
-    display: flex;
-    flex-direction:column;
-    padding: 0.4rem;
-    gap: 0.4rem;
-    justify-items: flex-end;
-}
-.CardButtons{
-    display:grid;
-    padding: 0.4rem;
-    gap: 0.8rem;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 0.4rem;
-}
-.CardButtons button{
-    border-radius: 0.4rem;
-    box-shadow: 3px 3px 5px #302f2f;
+    background-color: rgb(252, 215, 221);
+    min-height: 12vh; /* Ajusta la altura mínima si es necesario */
+    margin-bottom: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1rem;
     
 }
-.CardButtons button:hover{
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    padding: 0.4rem;
+    gap: 0.4rem;
+    height: auto;
+    width: 70vw;
+    justify-items: flex-end;
+    align-self: flex-start;
+}
+
+.CardButtons {
+    display: grid;
+    padding: 0.4rem;
+    gap: 0.8rem;
+    width: auto; /* Cambié a 'auto' para que los botones no ocupen solo un cuadrado */
+    height: auto;
+    border-radius: 0.4rem;
+}
+
+.CardButtons button {
+    border-radius: 0.4rem;
+    box-shadow: 3px 3px 5px #302f2f;
+}
+
+.titulos {
+    display: flex;
+    flex-direction: column; /* Asegura que los títulos estén en una columna */
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1; /* Hace que el contenido de títulos ocupe todo el espacio disponible */
+    margin-right: 1rem; /* Añade algo de espacio a la derecha */
+}
+.actionCard {
+    display: flex;
+    flex-direction: row; /* Cambié de columna a fila para dar más espacio horizontal */
+    justify-content: space-around;
+    display: flex;
+  justify-content: center;
+}
+
+.buttonEliminar button {
+    background-color: rgb(251, 117, 213);
+    border-radius: .7rem;
+    border-color: rgb(251, 117, 213);
     cursor: pointer;
-    background-color: rgba(8, 8, 8, 0.6); /* Color más oscuro al pasar el mouse */
+}
+
+.buttonEliminar span {
+    color: rgb(236, 236, 236);
+}
+.buttonEliminar span:hover {
+    color: rgb(255, 255, 255);
+}
+.buttonEditar button,
+.buttonVer button {
+    background: none;
+    border: none;
+    cursor:pointer
+}
+
+.buttonEditar button:hover {
     color: white;
-    transition: background-color 0.3s ease-in-out; /* Efecto de transición suave */
+    transition: background-color 0.3s ease-in-out;
+}
+.buttonEliminar button:hover {
+    background-color: rgb(255, 0, 204);
+    transition: background-color 0.3s ease-in-out;
+}
+.buttonVer button:hover {
+ 
+    color: white;
+    transition: background-color 0.3s ease-in-out;
 }
