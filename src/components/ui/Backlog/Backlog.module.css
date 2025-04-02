@@ -26,12 +26,14 @@
     background-color: #c3e9fa;
     border-color: #74d4fd;
     height: 35px;
+    width: 10vw;
 }
 
 .containerTitleAndButton button:hover {
-    cursor: pointer;
-    background-color: rgb(168, 95, 251); /* Color más oscuro al pasar el mouse */
+    cursor: pointer;/* 
+    background-color: rgb(168, 95, 251); /* Color más oscuro al pasar el mouse */ 
     color: rgb(255, 255, 255);
+    background-color: rgb(152, 66, 250);
     transition: background-color 0.3s ease-in-out; /* Efecto de transición suave */
     border-color: rgb(160, 135, 251);
 }

@@ -2,18 +2,18 @@
   "backlog": {
     "tareas": [
       {
-        "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
-        "titulo": "Tarea backlog",
-        "descripcion": "Descripcion tarea backlog",
-        "estado": "pendiente",
-        "fechaLimite": "2025-03-05"
+        "titulo": "titulo editado",
+        "descripcion": "descripcion nueva y editada",
+        "fechaLimite": "2025-04-06",
+        "estado": "en proceso",
+        "id": "Thu Mar 27 2025"
       },
       {
         "titulo": "titulo nuevo",
-        "descripcion": "holaaaaaaaaaaaaa",
-        "fechaLimite": "2025-03-29",
+        "descripcion": "kfkfkfkfkkfkf",
+        "fechaLimite": "2025-04-20",
         "estado": "en proceso",
-        "id": "Thu Mar 27 2025"
+        "id": "Tue Apr 01 2025"
       }
     ]
   },
@@ -31,6 +31,21 @@
             "descripcion": "Estamos aca",
             "estado": "pendiente",
             "fechaLimite": "2025-03-06"
+          }
+        ]
+      },
+      {
+        "id": "123456",
+        "fechaInicio": "2025-03-03",
+        "fechaCierre": "2025-03-06",
+        "nombre": "Sprint 1234567",
+        "tareas": [
+          {
+            "id": "500",
+            "titulo": "Tarea 3",
+            "descripcion": "Estamos en una sprint",
+            "estado": "pendiente",
+            "fechaLimite": "2025-03-05"
           }
         ]
       }

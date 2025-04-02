@@ -1,8 +1,8 @@
 import { useShallow } from "zustand/shallow"
 import { tareaStore } from "../store/tareaStore"
-import { editarTarea, eliminarTareaPorID, getAllTareas, postNuevaTarea } from "../http/tareas"
 import { ITarea } from "../types/ITareas"
 import Swal from "sweetalert2"
+import { editarTareaAPI, eliminarTareaPorID, getAllTareas, postNuevaTarea } from "../data/BacklogController/BacklogController"
 
 export const useTareas=()=>{
     //cuando hacemos un getAll tenemos que meter las tareas directamente desde aca 
@@ -31,18 +31,20 @@ export const useTareas=()=>{
 
     }
      //funcion que edita una tarea
-     const updateTarea=async(tareaEditada:ITarea)=>{
-        //si algo me llegara a salir mal yo necesito volver a un estado anterior
-        const estadoPrevio=tareas.find((el)=>el.id===tareaEditada.id)
-        editarTarea(tareaEditada)
+     const updateTarea = async (tareaEditada: ITarea) => {
+        const estadoPrevio = tareas.find((el) => el.id === tareaEditada.id);
+        editarTarea(tareaEditada); // Actualiza el estado local
+    
         try {
-            await editarTarea(tareaEditada)
-            Swal.fire('¡Exito!','Tarea editada correctamente','success')
+            const tareaActualizada = await editarTareaAPI(tareaEditada); // Llamada a la API
+            if (tareaActualizada) editarTarea(tareaActualizada); // Actualiza estado con la respuesta
+            Swal.fire('¡Éxito!', 'Tarea editada correctamente', 'success');
         } catch (error) {
-           if(estadoPrevio) editarTarea(estadoPrevio)
-            console.log(error,' - algo salio mal al editar');
+            if (estadoPrevio) editarTarea(estadoPrevio); // Volvemos al estado anterior en caso de error
+            console.log(error, ' - algo salió mal al editar');
         }
-     }
+    };
+    
      //funcion que elimina una tarea
      const deleteTarea=async(idTarea:string)=>{
         //si algo me llegara a salir mal yo necesito volver a un estado anterior

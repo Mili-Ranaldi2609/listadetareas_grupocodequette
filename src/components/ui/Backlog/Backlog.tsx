@@ -33,7 +33,9 @@ export const Backlog=()=>{
              <h2>Tareas en el Backlog</h2>
             <button onClick={()=>{
                 setOpenModalTarea(true)
-            }}>Agregar Tarea +</button>
+            }}>Agregar Tarea <span className="material-symbols-outlined">
+            add_notes
+            </span></button>
          </div>
          <div className={styles.containerList}>
             {   //se muestran las tareas por pantalla

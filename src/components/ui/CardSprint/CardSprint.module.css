@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
 
 .containerCard {
+    margin-top: .8rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    width: 70vw;
-    height: 5vh;
-    max-width: 70vw;
-    padding: 0.8rem;
+    justify-content: center;
+    width: 15vw;
+    height: 18vh;
+    max-width: 15vw;
+    padding: 1rem;
     border-radius: 1rem;
     justify-content: space-between;
     background-color: rgb(252, 215, 221);
@@ -29,7 +31,7 @@
 /* Contenedor de los títulos alineados correctamente */
 .titulos {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content:flex-start;
     flex: 1;
     gap: 0.3rem;
