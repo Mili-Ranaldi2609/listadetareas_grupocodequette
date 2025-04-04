@@ -27,7 +27,7 @@ export const createSprintController = async (sprintNueva: ISprint) => {
   
       return sprintNueva; 
     } catch (error) {
-      console.log("Error en createSprintController", error);
+      console.log("Error en createsprintController", error);
     }
   };
   export const updateSprintController = async (sprintActualizada: ISprint
