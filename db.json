@@ -2,10 +2,10 @@
   "backlog": {
     "tareas": [
       {
-        "titulo": "titulo editado",
-        "descripcion": "descripcion nueva y editada",
-        "fechaLimite": "2025-04-06",
-        "estado": "en proceso",
+        "titulo": "titulo editado x 2",
+        "descripcion": "descripcion nueva y editada x 2",
+        "fechaLimite": "2025-04-20",
+        "estado": "pendiente",
         "id": "Thu Mar 27 2025"
       },
       {
@@ -23,7 +23,7 @@
         "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
         "fechaInicio": "2025-03-04",
         "fechaCierre": "2025-03-11",
-        "nombre": "Sprint 122",
+        "nombre": "Sprint 122333444",
         "tareas": [
           {
             "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
@@ -46,8 +46,36 @@
             "descripcion": "Estamos en una sprint",
             "estado": "pendiente",
             "fechaLimite": "2025-03-05"
+          },
+          {
+            "id": "5293993939",
+            "titulo": "Tarea 4",
+            "descripcion": "Estamos en una sprint 3",
+            "estado": "pendiente",
+            "fechaLimite": "2025-03-05"
+          },
+          {
+            "id": "129ajaaau",
+            "titulo": "Tarea 5",
+            "descripcion": "Estamos en una sprint ",
+            "estado": "en proceso",
+            "fechaLimite": "2025-03-05"
+          },
+          {
+            "id": "sksksjsjjsjs123",
+            "titulo": "Tarea 6",
+            "descripcion": "Estamos completadas ",
+            "estado": "completada",
+            "fechaLimite": "2025-03-05"
           }
         ]
+      },
+      {
+        "nombre": "sprint nueva  y editada",
+        "fechaInicio": "2025-04-12",
+        "fechaCierre": "2025-04-27",
+        "tareas": [],
+        "id": "5eabc155-340b-4722-9add-8b5a71ea448f"
       }
     ]
   }

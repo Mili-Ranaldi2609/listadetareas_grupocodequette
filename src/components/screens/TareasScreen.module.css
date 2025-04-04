@@ -19,12 +19,14 @@
 
 .sprint_menu {
     background-color: #f4f4f4;
-    padding: 1rem;
+    padding: .5rem;
     border-right: 2px solid #ddd;
     width: 100%; /* El menú de sprint ocupa el 22% del ancho del contenido */
     height: 100vh;
+    
    
 }
+
 
 .backlog {
     display: flex;

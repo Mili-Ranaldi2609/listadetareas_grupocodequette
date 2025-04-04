@@ -1,9 +1,10 @@
-import { TareaScreen } from "./components/screens/TareasScreen"
+import { AppRouter } from "./routes/AppRouter.tsx"
+
 
 
 function App() {
   return (
-    <TareaScreen/>
+    <AppRouter/>
   )
 }
 

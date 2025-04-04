@@ -1,0 +1,150 @@
+html, body {
+    overflow: hidden; /* Oculta los scrolls exteriores */
+}
+
+.tareas_pendientes, .tareas_en_progreso, .tareas_completadas {
+    overflow-y: auto; /* Permite el scroll solo en los contenedores que lo necesiten */
+    max-height: 80vh; /* Evita que crezcan demasiado y necesiten scroll global */
+}
+
+.header {
+    grid-row: 1 / 2; /* El header ocupa la primera fila */
+}
+
+.contenido {
+    display: grid;
+    grid-template-columns: 18vw 1fr; /* El sprint-menu ocupa el 22% y el backlog ocupa el resto */
+    grid-gap: 1rem; /* Espacio entre el sprint-menu y el backlog */
+    height: 100%; /* Asegura que el contenido ocupe todo el espacio */
+}
+
+
+.tareas_container {
+    display: flex;
+    justify-content: space-between; /* Espaciado uniforme entre columnas */
+    gap: .4rem; /* Espacio entre columnas */
+    flex-wrap: wrap; /* Permite que las columnas se ajusten en pantallas pequeñas */
+    width: 70%;
+    align-items: flex-start;
+}
+
+.tareas_pendientes, .tareas_en_progreso, .tareas_completadas {
+    flex: 1;
+    background: #D0F1FF;
+    width: 30%; /* Controla el tamaño de cada columna */
+    max-width: 32%; /* Limita el crecimiento de las columnas */
+    min-width: 250px; /* Evita que se hagan demasiado pequeñas en pantallas chicas */
+    padding: 15px;
+    border-radius: 30px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Agrega scroll si hay muchas tareas */
+    box-sizing: border-box; /* Asegura que padding y border no afecten el tamaño total */
+}
+.tareas_container {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    width: 95%;
+    align-items: flex-start;
+    overflow-x: hidden;  /* ✅ Evita el scroll horizontal */
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+}
+
+.palito {
+    width: 8px;
+    height: 94%;
+    background-color: #FFB7E2;
+    border-radius: 3px;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+  
+  .circulo {
+    width: 25px;
+    height: 25px;
+    background-color: #FFB7E2;
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%);
+  }
+
+
+  .sprint_menu {
+    background-color: #f4f4f4;
+    padding: .5rem;
+    border-right: 2px solid #ddd;
+    width: 100%; /* El menú de sprint ocupa el 22% del ancho del contenido */
+    height: 100vh;
+    
+   
+}
+.lista_sprints {
+    overflow-y: auto; /* Permite desplazamiento vertical en la lista de sprints */
+    max-height: 90vh; /* Ajusta la altura máxima para evitar que se desborde */
+}
+.contenedorTitulosyBoton h2{
+    font-style: italic;
+}
+.contenedorTitulosyBoton{
+    align-items:flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+}
+.tituloyboton{
+    align-items: normal;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.buttonuevatareasprint button {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    gap: 18px;
+    background-color: #c9dcfe;
+    width: 10rem;
+    max-width: 15rem;
+    border-radius: .7rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.2rem;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 18px; /* Cambia el tamaño */
+    font-family: "Open Sans", sans-serif;
+    font-style: italic; /* Pone el texto en cursiva */
+    text-decoration: underline; /* Subrayado */;
+  }
+  .buttonuevatareasprint button span {
+    position: relative;
+    font-size: 20px; 
+    margin: 0;
+    top:-2px;
+    padding: 0;
+  }
+  
+  .buttonuevatareasprint button:hover {
+    background-color: rgb(96, 109, 184);
+  }
+.contenedorSprint {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    margin: .4rem;
+}
+.tareas_pendientes{
+    background-color: #c9dcfe;
+    
+}

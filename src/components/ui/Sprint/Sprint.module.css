@@ -1,14 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
 .sprint_container {
     top: .4rem; /* Alinea al inicio de la pantalla (parte superior) */
     left: 0; /* Alinea al inicio de la pantalla (lado izquierdo) */
-
-    padding: 1rem;
+    padding: .4rem;
+    margin-right:auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-family: "Open Sans", sans-serif;
     
   }
+  .containerList {
+    margin-top: 1px;
+    max-height: 430px; /* Ajusta según necesites */
+    overflow-y: auto;
+    overflow-x: hidden;
+    cursor: pointer;
+    padding-right: 0px; /* Evita separación con el borde derecho */
+    margin-right: -18px; /* Ajusta la posición del scrollbar más a la derecha */
+}
 
-  .sprint_header h1 {
-    font-size: 1.5rem;
-    color: #333;
-    text-align: center;
-  }
-  
+/* Scrollbar más delgado y pegado */
+.containerList::-webkit-scrollbar {
+    width: 6px; /* Reduce el ancho */
+}
+
+.containerList::-webkit-scrollbar-track {
+    background: transparent; /* Elimina cualquier fondo */
+}
+
+.containerList::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+.containerList::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Ajustes en los botones */
+.sprint_header {
+  font-size: .8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 0.8rem;
+}
+.sprint_header h1{
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+    font-style: italic;
+}
+
+
+.buttonbacklog button {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 18px;
+  background-color: #c9dcfe;
+  width: 10rem;
+  max-width: 15rem;
+  border-radius: .7rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 18px; /* Cambia el tamaño */
+  font-family: "Open Sans", sans-serif;
+  font-style: italic; /* Pone el texto en cursiva */
+  text-decoration: underline; /* Subrayado */;
+}
+.buttonbacklog button span {
+  position: relative;
+  font-size: 20px; 
+  margin: 0;
+  top:-2px;
+  padding: 0;
+}
+
+.buttonbacklog button:hover {
+  background-color: rgb(96, 109, 184);
+}
+.buttonagregarsprint  button { 
+  background-color: #c9dcfe;
+  border-radius: .7rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.buttonagregarsprint  button:hover {
+  background-color: rgb(96, 109, 184);
+}
+.sprint_container h1 {
+  font-size: 1.5rem; 
+}

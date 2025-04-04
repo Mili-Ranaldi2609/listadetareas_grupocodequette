@@ -3,7 +3,7 @@
 
 .containerHeader{
     width: 100vw;
-    height: 60px;
+    height: 3rem;
     background-color: rgb(239, 197, 255);
     display: flex;
     justify-content: center;

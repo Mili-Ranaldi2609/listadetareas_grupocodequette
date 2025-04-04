@@ -3,8 +3,8 @@ import { tareaStore } from "../../../store/tareaStore"
 import styles from "./Backlog.module.css"
 import { useTareas } from "../../../hooks/useTarea"
 import { ITarea } from "../../../types/ITareas"
-import { CardTarea } from "../CardTarea/CardTarea"
-import { ModalTarea } from "../Modal/ModalTarea"
+import { CardTarea } from "../../ui/CardTarea/CardTarea"
+import { ModalTarea } from "../../ui/Modal/ModalTarea"
 ///Llamamos la funcion que trae todas las tareas de la base de datos las setea el estado y podemos mostrarlo por pantalla
 export const Backlog=()=>{
    
