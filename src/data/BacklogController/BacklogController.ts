@@ -1,14 +1,14 @@
 import axios from "axios"
 import { putTareasBacklog } from "../../http/tareas";
 import { ITarea } from "../../types/ITareas";
-import { API_URL_Backlog } from "../../utils/constantes";
 
- 
+import {config} from "../../../config/config.ts"
+
 
  export const getAllTareas = async ():Promise < ITarea[] | undefined
  > => {
     try {
-        const response = await axios.get<{ tareas: ITarea[] }>(API_URL_Backlog);
+        const response = await axios.get<{ tareas: ITarea[] }>(config.PortBacklog);
         return response.data.tareas; // Asegura que devuelves el array de tareas
     } catch (error) {
         console.error("Error en el getAlltareas del controller:", error);
@@ -19,13 +19,13 @@ import { API_URL_Backlog } from "../../utils/constantes";
     export const postNuevaTarea = async (nuevaTarea: ITarea) => {
         try {
             // Obtiene el backlog actual
-            const response = await axios.get<{ tareas: ITarea[] }>(API_URL_Backlog);
+            const response = await axios.get<{ tareas: ITarea[] }>(config.PortBacklog);
     
             // Agrega la nueva tarea al array de tareas
             const nuevasTareas = [...response.data.tareas, nuevaTarea];
     
             // Envía el nuevo array con un PUT
-            await axios.put(API_URL_Backlog, { tareas: nuevasTareas });
+            await axios.put(config.PortBacklog, { tareas: nuevasTareas });
     
             return nuevaTarea;
         } catch (error) {

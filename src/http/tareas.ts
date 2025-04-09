@@ -1,13 +1,12 @@
 import axios from "axios"; // Importamos axios para hacer solicitudes HTTP
-import { API_URL_Backlog } from "../utils/constantes"; // Importamos la URL base de la API
 import { ITarea } from "../types/ITareas";
 import { IBacklog } from "../types/IBacklog";
-
+import {config} from "../../config/config.ts"
 // Función para actualizar el objeto global del json server
 export const putTareasBacklog = async (tareas: ITarea[]) => {
   try {
     // Hacemos una petición PUT a la API enviando la lista de proyectos
-    const response = await axios.put<IBacklog>(API_URL_Backlog, {
+    const response = await axios.put<IBacklog>(config.PortBacklog, {
       tareas: tareas, // Enviamos los proyectos en el body de la solicitud
     });
 
