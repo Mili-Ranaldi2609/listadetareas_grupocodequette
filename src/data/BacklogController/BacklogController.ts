@@ -3,8 +3,6 @@ import { putTareasBacklog } from "../../http/tareas";
 import { ITarea } from "../../types/ITareas";
 
 import {config} from "../../../config/config.ts"
-
-
  export const getAllTareas = async ():Promise < ITarea[] | undefined
  > => {
     try {
@@ -66,4 +64,3 @@ export const editarTareaAPI = async (tareaActualizada: ITarea) => {
         
     }
  }
- 

@@ -1,21 +1,6 @@
 {
   "backlog": {
-    "tareas": [
-      {
-        "titulo": "titulo editado x 3",
-        "descripcion": "descripcion nueva y editada x 2",
-        "fechaLimite": "2025-04-20",
-        "estado": "pendiente",
-        "id": "Thu Mar 27 2025"
-      },
-      {
-        "titulo": "titulo nuevo",
-        "descripcion": "kfkfkfkfkkfkf",
-        "fechaLimite": "2025-04-20",
-        "estado": "en proceso",
-        "id": "Tue Apr 01 2025"
-      }
-    ]
+    "tareas": []
   },
   "sprintList": {
     "sprints": [
@@ -31,6 +16,35 @@
             "descripcion": "Estamos aca",
             "estado": "pendiente",
             "fechaLimite": "2025-03-06"
+          },
+          {
+            "titulo": "nueva tarea",
+            "descripcion": "descripcion 1",
+            "fechaLimite": "2025-04-13",
+            "estado": "pendiente",
+            "id": "a5afcbdb-6d04-400d-8180-5364124a541f"
+          },
+          {
+            "titulo": "titulo backlog",
+            "descripcion": "descripcion backlog ",
+            "fechaLimite": "2025-04-18",
+            "estado": "pendiente",
+            "id": "d3b67d85-9fac-42f1-be48-cef94d880da6"
+          },
+          {
+            "titulo": "holaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "descripcion": "smsmsmsmmssm",
+            "fechaLimite": "2025-04-25",
+            "estado": "en proceso",
+            "id": "7bb0d52e-92bf-4b88-8ce7-9bbe9fad0ac5",
+            "sprintId": "5eabc155-340b-4722-9add-8b5a71ea448f"
+          },
+          {
+            "titulo": "djjdjjdjdjdjjdjd",
+            "descripcion": "jdjdjdjjddjjdjdjjd",
+            "fechaLimite": "2025-04-20",
+            "estado": "pendiente",
+            "id": "d919c542-e058-43e9-8982-13330bde0674"
           }
         ]
       },
@@ -67,6 +81,13 @@
             "descripcion": "Estamos completadas ",
             "estado": "completada",
             "fechaLimite": "2025-03-05"
+          },
+          {
+            "titulo": "nueva tarea",
+            "descripcion": "nueva descripcion",
+            "fechaLimite": "2025-04-18",
+            "estado": "pendiente",
+            "id": "0e2ab91c-61f6-4ed1-9319-f67d4fe21b84"
           }
         ]
       },
@@ -74,7 +95,29 @@
         "nombre": "sprint nueva  y editada",
         "fechaInicio": "2025-04-12",
         "fechaCierre": "2025-04-27",
-        "tareas": [],
+        "tareas": [
+          {
+            "titulo": "tarea backlog",
+            "descripcion": "holaaaaaaaaaaaaaa",
+            "fechaLimite": "2025-04-19",
+            "estado": "completada",
+            "id": "f2ddb4d1-0f42-4a60-b2a8-6e379922f17e"
+          },
+          {
+            "titulo": "djdjdj",
+            "descripcion": "xcccccccccccccc",
+            "fechaLimite": "2222-03-12",
+            "estado": "en proceso",
+            "id": "bc1f64f1-c346-4e70-8aaa-1453437e1e83"
+          },
+          {
+            "titulo": "dddddddddddddd",
+            "descripcion": "ddddddddddddddddddddddddddddd",
+            "fechaLimite": "2025-03-22",
+            "estado": "pendiente",
+            "id": "5b31c4eb-f371-4180-a855-015eddacf643"
+          }
+        ],
         "id": "5eabc155-340b-4722-9add-8b5a71ea448f"
       }
     ]

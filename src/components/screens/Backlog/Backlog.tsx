@@ -7,14 +7,18 @@ import { CardTarea } from "../../ui/CardTarea/CardTarea"
 import { ModalTarea } from "../../ui/Modal/ModalTarea"
 ///Llamamos la funcion que trae todas las tareas de la base de datos las setea el estado y podemos mostrarlo por pantalla
 export const Backlog=()=>{
-   
+    const refreshBacklog = () => {
+        getTareas();
+      };
+      
     //seteo tarea activa
     const setTareaActiva=tareaStore((state)=>state.setTareaActiva)
-    const{getTareas,tareas}=useTareas()
+    const{tareas,getTareas}=useTareas()
     ///hacemos una resolucion de traer las tareas
     useEffect(()=>{
         getTareas()
     },[])
+
     //estado modal
     const [openModalTarea,setOpenModalTarea]=useState(false)
     //funcion que nos permite abrir el modal 
@@ -42,6 +46,7 @@ export const Backlog=()=>{
                 tareas.length>0?
                 //implementamos el card list
                 tareas.map((el)=>(<CardTarea
+                    refreshBacklog={refreshBacklog} 
                     handleOpenModalEdit={handleOpenModalEdit}
                     tarea={el}/>)):(
                     <div>

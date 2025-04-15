@@ -74,3 +74,33 @@
 .buttonVer button:hover {
     color: white;
 }
+/*select sprint*/
+.selectsprint  {
+    width: 80%;
+    padding: .3rem;
+    resize: none;
+    margin: .4rem 0;
+    border: 2px solid #a200ff; /* Borde celeste */
+    border-radius: 10px; /* Bordes redondeados */
+    outline: none; /* Quita el borde azul por defecto en los inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+.buttonenviarasprint button {
+    background-color: rgb(251, 117, 213);
+    border-radius: .7rem;
+    width: 40%;
+    border: none;
+    cursor: pointer;
+    padding: 0.2rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.buttonenviarasprint button:hover {
+    background-color: rgb(255, 0, 204);
+}
+.buttonenviarasprint{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
+}

@@ -3,7 +3,7 @@ import { tareaStore } from "../../../store/tareaStore"
 import styles from "./Modal.module.css"
 import { ITarea } from "../../../types/ITareas"
 import { useTareas } from "../../../hooks/useTarea"
-
+import { v4 as uuidv4 } from "uuid";
 type IModal = {
     handleCloseModal: VoidFunction
 }
@@ -38,7 +38,7 @@ export const ModalTarea: FC<IModal> = ({ handleCloseModal }) => {
         if (tareaActiva) {
             updateTarea(formValues)
         } else {
-            createTarea({ ...formValues, id: new Date().toDateString() })
+            createTarea({ ...formValues, id: uuidv4() })
         }
         setTareaActiva(null)
         handleCloseModal()
