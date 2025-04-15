@@ -10,6 +10,9 @@ export const SprintDetail = () => {
   const { id } = useParams(); // Obtener ID de la sprint desde la URL
   const { getSprints, sprints } = useSprint();
   const [sprint, setSprint] = useState(null);
+  const refreshSprint= () => {
+    getSprints();
+  };
   
     //estado modal
     const [openModalTarea,setOpenModalTarea]=useState(false)
@@ -68,7 +71,8 @@ new_window
               {tareasPendientes.length > 0 ? (
                 tareasPendientes.map((tarea) => (
                   <div key={tarea.id} className={styles.tarea_card}>
-                    <CardTareaSprint key={tarea.id} tarea={tarea} handleOpenModalEdit={handleOpenModalEdit} />
+                    <CardTareaSprint key={tarea.id} tarea={tarea}
+                    refreshSprint={refreshSprint}  handleOpenModalEdit={handleOpenModalEdit} />
                   </div>
                 ))
               ) : (
@@ -83,7 +87,7 @@ new_window
               {tareasEnProgreso.length > 0 ? (
                 tareasEnProgreso.map((tarea) => (
                   <div key={tarea.id} className={styles.tarea_card}>
-                    <CardTareaSprint key={tarea.id} tarea={tarea} handleOpenModalEdit={handleOpenModalEdit} />
+                    <CardTareaSprint key={tarea.id} tarea={tarea} refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} />
                   </div>
                 ))
               ) : (
@@ -98,7 +102,7 @@ new_window
               {tareasCompletadas.length > 0 ? (
                 tareasCompletadas.map((tarea) => (
                   <div key={tarea.id} className={styles.tarea_card}>
-                    <CardTareaSprint key={tarea.id} tarea={tarea} handleOpenModalEdit={handleOpenModalEdit} />
+                    <CardTareaSprint key={tarea.id} tarea={tarea} refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} />
                   </div>
                 ))
               ) : (

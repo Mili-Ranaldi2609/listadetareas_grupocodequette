@@ -1,6 +1,21 @@
 {
   "backlog": {
-    "tareas": []
+    "tareas": [
+      {
+        "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
+        "titulo": "Tarea 2",
+        "descripcion": "Estamos aca",
+        "estado": "pendiente",
+        "fechaLimite": "2025-03-06"
+      },
+      {
+        "titulo": "titulo backlog",
+        "descripcion": "descripcion backlog ",
+        "fechaLimite": "2025-04-18",
+        "estado": "pendiente",
+        "id": "d3b67d85-9fac-42f1-be48-cef94d880da6"
+      }
+    ]
   },
   "sprintList": {
     "sprints": [
@@ -11,25 +26,11 @@
         "nombre": "Sprint 122333444",
         "tareas": [
           {
-            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
-            "titulo": "Tarea 2",
-            "descripcion": "Estamos aca",
-            "estado": "pendiente",
-            "fechaLimite": "2025-03-06"
-          },
-          {
             "titulo": "nueva tarea",
             "descripcion": "descripcion 1",
             "fechaLimite": "2025-04-13",
             "estado": "pendiente",
             "id": "a5afcbdb-6d04-400d-8180-5364124a541f"
-          },
-          {
-            "titulo": "titulo backlog",
-            "descripcion": "descripcion backlog ",
-            "fechaLimite": "2025-04-18",
-            "estado": "pendiente",
-            "id": "d3b67d85-9fac-42f1-be48-cef94d880da6"
           },
           {
             "titulo": "holaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
