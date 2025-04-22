@@ -41,7 +41,7 @@ export const Backlog=()=>{
             add_notes
             </span></button>
          </div>
-         <div className={styles.containerList}>
+         <div>
             {   //se muestran las tareas por pantalla
                 tareas.length>0?
                 //implementamos el card list

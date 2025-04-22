@@ -5,26 +5,34 @@ import { Sprint } from "../ui/Sprint/Sprint";
 import styles from "./SprintDetalles.module.css";
 import { ITarea } from "../../types/ITareas";
 import { CardTareaSprint } from "../ui/CardTareaSprint/CardTareaSprint";
+import { ModalTareaSprint } from "../ui/Modal/ModalTareaSprint";
 
 export const SprintDetail = () => {
   const { id } = useParams(); // Obtener ID de la sprint desde la URL
+  const [tareaSeleccionada, setTareaSeleccionada] = useState<ITarea>({} as ITarea);
   const { getSprints, sprints } = useSprint();
   const [sprint, setSprint] = useState(null);
-  const refreshSprint= () => {
+  const refreshSprint = () => {
     getSprints();
   };
-  
-    //estado modal
-    const [openModalTarea,setOpenModalTarea]=useState(false)
-    //funcion que nos permite abrir el modal 
-    const handleOpenModalEdit=(tarea:ITarea)=>{
-            setOpenModalTarea(tarea)
-            setOpenModalTarea(true)
-    }
-    //funcion que nos permite cerrar el modal
-    const handleCloseModal=()=>{
-        setOpenModalTarea(false)
-    }
+
+  //estado modal
+  const [openModalTarea, setOpenModalTarea] = useState(false)
+  //funcion que nos permite abrir el modal 
+  const handleOpenModalNuevaTarea = () => {
+    setTareaSeleccionada(null); // vacía
+    setOpenModalTarea(true);
+  };
+
+  const handleOpenModalEdit = (tarea: ITarea) => {
+    setTareaSeleccionada(tarea); // con datos
+    setOpenModalTarea(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModalTarea(false);
+  };
+
   useEffect(() => {
     if (sprints.length === 0) {
       getSprints(); // Asegura que los Sprints están cargados
@@ -53,17 +61,17 @@ export const SprintDetail = () => {
         </div>
         <div className={styles.contenedorSprint}>
           <div className={styles.contenedorTitulosyBoton}>
-          <div className={styles.tituloyboton}>
-          <h1>Nombre de la sprint: {sprint.nombre}</h1>
-          <div className={styles.buttonuevatareasprint}>
-          <button>Nueva Tarea<span className="material-symbols-outlined">
-new_window
-</span></button>
+            <div className={styles.tituloyboton}>
+              <h1>Nombre de la sprint: {sprint.nombre}</h1>
+              <div className={styles.buttonuevatareasprint}>
+                <button onClick={handleOpenModalNuevaTarea}>Nueva Tarea<span className="material-symbols-outlined">
+                  new_window
+                </span></button>
+              </div>
+            </div>
+            <h2>Tareas en la Sprint</h2>
           </div>
-          </div>
-          <h2>Tareas en la Sprint</h2>
-          </div>
-          
+
           <div className={styles.tareas_container}>
             {/* Sección de tareas pendientes */}
             <div className={styles.tareas_pendientes}>
@@ -72,7 +80,7 @@ new_window
                 tareasPendientes.map((tarea) => (
                   <div key={tarea.id} className={styles.tarea_card}>
                     <CardTareaSprint key={tarea.id} tarea={tarea}
-                    refreshSprint={refreshSprint}  handleOpenModalEdit={handleOpenModalEdit} />
+                      refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} idSprint={sprint} />
                   </div>
                 ))
               ) : (
@@ -87,7 +95,7 @@ new_window
               {tareasEnProgreso.length > 0 ? (
                 tareasEnProgreso.map((tarea) => (
                   <div key={tarea.id} className={styles.tarea_card}>
-                    <CardTareaSprint key={tarea.id} tarea={tarea} refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} />
+                    <CardTareaSprint key={tarea.id} tarea={tarea} refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} idSprint={sprint} />
                   </div>
                 ))
               ) : (
@@ -102,7 +110,7 @@ new_window
               {tareasCompletadas.length > 0 ? (
                 tareasCompletadas.map((tarea) => (
                   <div key={tarea.id} className={styles.tarea_card}>
-                    <CardTareaSprint key={tarea.id} tarea={tarea} refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} />
+                    <CardTareaSprint key={tarea.id} tarea={tarea} refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} idSprint={sprint} />
                   </div>
                 ))
               ) : (
@@ -112,7 +120,12 @@ new_window
           </div>
         </div>
       </div>
-       {openModalTarea &&<ModalTarea handleCloseModal={handleCloseModal}/>}
+      {openModalTarea && (
+        <ModalTareaSprint
+          handleCloseModal={handleCloseModal} idSprint={id} tareaSeleccionada={tareaSeleccionada}
+        />
+      )}
+
     </div>
   );
 };

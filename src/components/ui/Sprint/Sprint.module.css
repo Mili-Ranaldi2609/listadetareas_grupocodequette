@@ -12,7 +12,7 @@
     font-family: "Open Sans", sans-serif;
     
   }
-  .containerList {
+  .containerListSprints {
     margin-top: 1px;
     max-height: 430px; /* Ajusta según necesites */
     overflow-y: auto;
@@ -23,20 +23,20 @@
 }
 
 /* Scrollbar más delgado y pegado */
-.containerList::-webkit-scrollbar {
+.containerListSprints::-webkit-scrollbar {
     width: 6px; /* Reduce el ancho */
 }
 
-.containerList::-webkit-scrollbar-track {
+.containerListSprints::-webkit-scrollbar-track {
     background: transparent; /* Elimina cualquier fondo */
 }
 
-.containerList::-webkit-scrollbar-thumb {
+.containerListSprints::-webkit-scrollbar-thumb {
     background: #333;
     border-radius: 4px;
 }
 
-.containerList::-webkit-scrollbar-thumb:hover {
+.containerListSprints::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
 

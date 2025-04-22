@@ -33,10 +33,13 @@ export const tareaStore= create<ITareaStore>((set)=>({
         }),
         //eliminar una tarea del array 
         eliminarTarea:(idTarea)=>
-            set((state)=>{                                      
+            set((state)=>{                           
+             console.log("id tarea a eliminar",idTarea);          
             const arregloTreas=state.tareas.filter((tarea)=>tarea.id!==idTarea)
             return{tareas:arregloTreas} 
         }),
         //setear la tarea activa
+        
+        
         setTareaActiva:(tareaActivaIn)=>set(()=>({tareaActiva:tareaActivaIn}))
 }))

@@ -2,18 +2,18 @@
   "backlog": {
     "tareas": [
       {
-        "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
-        "titulo": "Tarea 2",
-        "descripcion": "Estamos aca",
+        "titulo": "nueva tarea",
+        "descripcion": "descripcion 1",
+        "fechaLimite": "2025-04-13",
         "estado": "pendiente",
-        "fechaLimite": "2025-03-06"
+        "id": "a5afcbdb-6d04-400d-8180-5364124a541f"
       },
       {
-        "titulo": "titulo backlog",
-        "descripcion": "descripcion backlog ",
+        "titulo": "nueva tarea",
+        "descripcion": "nueva descripcion 1",
         "fechaLimite": "2025-04-18",
         "estado": "pendiente",
-        "id": "d3b67d85-9fac-42f1-be48-cef94d880da6"
+        "id": "0e2ab91c-61f6-4ed1-9319-f67d4fe21b84"
       }
     ]
   },
@@ -23,29 +23,35 @@
         "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
         "fechaInicio": "2025-03-04",
         "fechaCierre": "2025-03-11",
-        "nombre": "Sprint 122333444",
+        "nombre": "Sprint 12233",
         "tareas": [
           {
-            "titulo": "nueva tarea",
-            "descripcion": "descripcion 1",
-            "fechaLimite": "2025-04-13",
-            "estado": "pendiente",
-            "id": "a5afcbdb-6d04-400d-8180-5364124a541f"
-          },
-          {
-            "titulo": "holaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-            "descripcion": "smsmsmsmmssm",
+            "titulo": "hola",
+            "descripcion": "Mili boluda JIJIJI",
             "fechaLimite": "2025-04-25",
             "estado": "en proceso",
-            "id": "7bb0d52e-92bf-4b88-8ce7-9bbe9fad0ac5",
-            "sprintId": "5eabc155-340b-4722-9add-8b5a71ea448f"
+            "id": "7bb0d52e-92bf-4b88-8ce7-9bbe9fad0ac5"
           },
           {
-            "titulo": "djjdjjdjdjdjjdjd",
-            "descripcion": "jdjdjdjjddjjdjdjjd",
-            "fechaLimite": "2025-04-20",
+            "titulo": "hola",
+            "descripcion": "ssssd",
+            "fechaLimite": "2025-02-12",
             "estado": "pendiente",
-            "id": "d919c542-e058-43e9-8982-13330bde0674"
+            "id": "4f4a9d2e-4b71-410a-8a85-3aa68958317d"
+          },
+          {
+            "titulo": "nueva tarea desde una sprint ",
+            "descripcion": "descripcion generica ",
+            "fechaLimite": "2025-04-04",
+            "estado": "en proceso",
+            "id": "33fbceb6-4c9f-411e-b935-06984cf56306"
+          },
+          {
+            "titulo": "titulo backlog",
+            "descripcion": "descripcion backlog ",
+            "fechaLimite": "2025-04-18",
+            "estado": "pendiente",
+            "id": "d3b67d85-9fac-42f1-be48-cef94d880da6"
           }
         ]
       },
@@ -56,17 +62,10 @@
         "nombre": "Sprint 1234567",
         "tareas": [
           {
-            "id": "500",
-            "titulo": "Tarea 3",
-            "descripcion": "Estamos en una sprint",
-            "estado": "pendiente",
-            "fechaLimite": "2025-03-05"
-          },
-          {
-            "id": "5293993939",
-            "titulo": "Tarea 4",
-            "descripcion": "Estamos en una sprint 3",
-            "estado": "pendiente",
+            "id": "sksksjsjjsjs123",
+            "titulo": "Tarea 6",
+            "descripcion": "Estamos completadas ",
+            "estado": "completada",
             "fechaLimite": "2025-03-05"
           },
           {
@@ -77,18 +76,18 @@
             "fechaLimite": "2025-03-05"
           },
           {
-            "id": "sksksjsjjsjs123",
-            "titulo": "Tarea 6",
-            "descripcion": "Estamos completadas ",
-            "estado": "completada",
-            "fechaLimite": "2025-03-05"
+            "titulo": "djdjdj",
+            "descripcion": "xcccccccccccccc",
+            "fechaLimite": "2222-03-12",
+            "estado": "en proceso",
+            "id": "bc1f64f1-c346-4e70-8aaa-1453437e1e83"
           },
           {
-            "titulo": "nueva tarea",
-            "descripcion": "nueva descripcion",
-            "fechaLimite": "2025-04-18",
+            "id": "500",
+            "titulo": "Tarea 3 editada 3",
+            "descripcion": "Estamos en una sprint",
             "estado": "pendiente",
-            "id": "0e2ab91c-61f6-4ed1-9319-f67d4fe21b84"
+            "fechaLimite": "2025-03-05"
           }
         ]
       },
@@ -105,18 +104,25 @@
             "id": "f2ddb4d1-0f42-4a60-b2a8-6e379922f17e"
           },
           {
-            "titulo": "djdjdj",
-            "descripcion": "xcccccccccccccc",
-            "fechaLimite": "2222-03-12",
-            "estado": "en proceso",
-            "id": "bc1f64f1-c346-4e70-8aaa-1453437e1e83"
+            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
+            "titulo": "Tarea 2",
+            "descripcion": "Estamos aca x3",
+            "estado": "pendiente",
+            "fechaLimite": "2025-03-06"
           },
           {
-            "titulo": "dddddddddddddd",
-            "descripcion": "ddddddddddddddddddddddddddddd",
-            "fechaLimite": "2025-03-22",
-            "estado": "pendiente",
-            "id": "5b31c4eb-f371-4180-a855-015eddacf643"
+            "titulo": "djjdjjdjdjdjjdjd",
+            "descripcion": "jdjdjdjjddjjdjdjjd",
+            "fechaLimite": "2025-04-20",
+            "estado": "completada",
+            "id": "d919c542-e058-43e9-8982-13330bde0674"
+          },
+          {
+            "titulo": "hola",
+            "descripcion": "1234567890",
+            "fechaLimite": "2025-04-18",
+            "estado": "en proceso",
+            "id": "764a7041-afac-4308-bd29-273aa150b71b"
           }
         ],
         "id": "5eabc155-340b-4722-9add-8b5a71ea448f"

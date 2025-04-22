@@ -8,6 +8,7 @@ import { ISprint } from "../../../types/ISprints";
 import { ModalSprint } from "../Modal/ModalSprint";
 
 export const Sprint = () => {
+  const sprintActiva = sprintStore((state) => state.sprintActiva)
   const navigate = useNavigate(); // Inicializa useNavigate
   const [mensajeAviso, setMensajeAviso] = useState(""); 
    //seteo sprint activa
@@ -16,10 +17,9 @@ export const Sprint = () => {
       useEffect(()=>{
           getSprints()
       },[])
-
     // Manejar clic en una Sprint
   const handleSelectSprint = (sprintId: string) => {
-    setSprintActiva(sprintId);
+    setSprintActiva(sprintActiva);
     navigate(`/sprint/${sprintId}`);
   };
   useEffect(() => {
@@ -65,11 +65,11 @@ setOpenModalSprint(true);
                 
 
               </div>
-               <div className={styles.containerList}>
+               <div className={styles.containerListSprints}>
                   {   //se muestran las tareas por pantalla
                       sprints.length>0?
                       //implementamos el card list
-                      sprints.map((el)=>(<CardSprint handleOpenModalEdit={handleOpenModalEdit} sprint={el} onClick={() => handleSelectSprint(el.id)}/>)):(
+                      sprints.map((el)=>(<CardSprint handleOpenModalEdit={handleOpenModalEdit} sprint={el} onClick={() => handleSelectSprint(el.id!)}/>)):(
                           <div>
                               <h3>No hay Sprints</h3>
                           </div>
