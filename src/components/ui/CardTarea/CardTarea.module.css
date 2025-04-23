@@ -88,11 +88,18 @@
 .buttonenviarasprint button {
     background-color: rgb(251, 117, 213);
     border-radius: .7rem;
-    width: 40%;
+    width: 50%;
     border: none;
     cursor: pointer;
     padding: 0.2rem;
     transition: background-color 0.3s ease-in-out;
+    align-items: center;
+
+     
+    display: flex;               /* Para alinear texto e ícono */
+    align-items: center;        /* Centrar verticalmente */
+    justify-content: center;    /* Centrar horizontalmente */
+    gap: 0.4rem;                /* Espacio entre texto e ícono */
 }
 
 .buttonenviarasprint button:hover {

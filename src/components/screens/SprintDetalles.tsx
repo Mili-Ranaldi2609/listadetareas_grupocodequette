@@ -80,7 +80,7 @@ export const SprintDetail = () => {
                 tareasPendientes.map((tarea) => (
                   <div key={tarea.id} className={styles.tarea_card}>
                     <CardTareaSprint key={tarea.id} tarea={tarea}
-                      refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} idSprint={sprint} />
+                      refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} idSprint={id} />
                   </div>
                 ))
               ) : (
@@ -95,7 +95,7 @@ export const SprintDetail = () => {
               {tareasEnProgreso.length > 0 ? (
                 tareasEnProgreso.map((tarea) => (
                   <div key={tarea.id} className={styles.tarea_card}>
-                    <CardTareaSprint key={tarea.id} tarea={tarea} refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} idSprint={sprint} />
+                    <CardTareaSprint key={tarea.id} tarea={tarea} refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} idSprint={id} />
                   </div>
                 ))
               ) : (
@@ -110,7 +110,7 @@ export const SprintDetail = () => {
               {tareasCompletadas.length > 0 ? (
                 tareasCompletadas.map((tarea) => (
                   <div key={tarea.id} className={styles.tarea_card}>
-                    <CardTareaSprint key={tarea.id} tarea={tarea} refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} idSprint={sprint} />
+                    <CardTareaSprint key={tarea.id} tarea={tarea} refreshSprint={refreshSprint} handleOpenModalEdit={handleOpenModalEdit} idSprint={id} />
                   </div>
                 ))
               ) : (

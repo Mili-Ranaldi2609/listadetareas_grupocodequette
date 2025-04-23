@@ -7,10 +7,10 @@ import { sprintStore } from "../../../store/sprintStore";
 import { tareaStore } from "../../../store/tareaStore";
 import Swal from "sweetalert2";
 import { ModalTareaSprint } from "../Modal/ModalTareaSprint";
-
+import { useSprint } from "../../../hooks/useSprint";
 type ICardTarea = {
   tarea: ITarea;
-  idSprint: string
+  idSprint: string | undefined
   handleOpenModalEdit: (tarea: ITarea) => void;
   refreshSprint: () => void;
 };
@@ -32,10 +32,36 @@ export const CardTareaSprint: FC<ICardTarea> = ({ tarea, idSprint, refreshSprint
   const editarTarea = () => {
     handleOpenModalEdit(tarea);
   };
+  const { deleteTaskInSprint,actualizarEstadoTarea } = useSprint();
+  const eliminarTarea = () => {
+    console.log("Eliminando tarea con id:", tarea.id, "id de la sprint:", idSprint);
+
+    deleteTaskInSprint(idSprint, tarea.id!);
+  };
+
 
   const verDetalle = () => {
     setMostrarDetalle(true);
   };
+  const cambiarEstadoTarea = () => {
+    let nuevoEstado = "";
+  
+    switch (tarea.estado) {
+      case "pendiente":
+        nuevoEstado = "en proceso";
+        break;
+      case "en proceso":
+        nuevoEstado = "completada";
+        break;
+      case "completada":
+        nuevoEstado = "pendiente";
+        break;
+      default:
+        nuevoEstado = "pendiente";
+    }
+    actualizarEstadoTarea(tarea.id!,idSprint,nuevoEstado)
+  };
+  
   const enviarTareaABacklog = async (idTarea: string) => {
     try {
       // Obtener los datos actuales de los sprints y backlog
@@ -95,7 +121,7 @@ export const CardTareaSprint: FC<ICardTarea> = ({ tarea, idSprint, refreshSprint
             </button>
           </div>
           <div className={styles.buttonEliminar}>
-            <button>
+            <button onClick={eliminarTarea}>
               <span className="material-symbols-outlined">delete</span>
             </button>
           </div>
@@ -107,6 +133,13 @@ export const CardTareaSprint: FC<ICardTarea> = ({ tarea, idSprint, refreshSprint
           <div className={styles.buttonVer}>
             <button onClick={verDetalle}>
               <span className="material-symbols-outlined">visibility</span>
+            </button>
+          </div>
+          <div className={styles.buttonCambioEstado}>
+            <button onClick={cambiarEstadoTarea} >
+              <span className="material-symbols-outlined">
+                double_arrow
+              </span>
             </button>
           </div>
         </div>

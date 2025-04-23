@@ -2,7 +2,8 @@ import { useShallow } from "zustand/shallow"
 import { sprintStore } from "../store/sprintStore"
 import {
     createSprintController, addTaskToSprintController,
-    updateTaskInSprintController, deleteSprintController, getAllSprint, updateSprintController
+    updateTaskInSprintController, deleteSprintController, getAllSprint, updateSprintController,
+    deleteTaskByIdOfStringController
 } from "../data/SprintController/SprintController"
 import { ISprint } from "../types/ISprints"
 import Swal from "sweetalert2"
@@ -88,6 +89,46 @@ export const useSprint = () => {
             Swal.fire('¡Éxito!', 'Tarea actualizada correctamente', 'success');
         }
     };
+    const deleteTaskInSprint = async (idSprint: string, idTarea: string) => {
+        try {
+            const sprintActualizada = await deleteTaskByIdOfStringController(idSprint, idTarea);
+            if (sprintActualizada) {
+                editarSprint(sprintActualizada);
+                Swal.fire('¡Éxito!', 'Tarea eliminada correctamente', 'success');
+            } else {
+                Swal.fire('Error', 'No se pudo eliminar la tarea. Intente nuevamente', 'error');
+            }
+        } catch (error) {
+            console.error("Error eliminando la tarea:", error);
+            Swal.fire('Error', 'Hubo un problema al eliminar la tarea. Intente nuevamente', 'error');
+        }
+    };
+    const actualizarEstadoTarea = async (idTarea: string, idSprint: string | undefined, nuevoEstado: string) => {
+        const sprints = sprintStore.getState().sprints;
+        const editarSprintsArray = sprintStore.getState().editarSprint;
+        const sprint = sprints.find((s) => s.id === idSprint);
+        if (!sprint) return;
+
+        const tareasActualizadas = sprint.tareas.map((t) =>
+            t.id === idTarea ? { ...t, estado: nuevoEstado } : t
+        );
+
+        const sprintActualizado: ISprint = {
+            ...sprint,
+            tareas: tareasActualizadas,
+        };
+
+        try {
+            await updateSprintController(sprintActualizado); // Actualiza en la base de datos
+            editarSprintsArray(sprintActualizado); // Actualiza en Zustand
+            Swal.fire('¡Éxito!', 'Tarea cambiada de estado', 'success');
+        } catch (error) {
+            console.error("Error al actualizar estado de la tarea", error);
+            Swal.fire("Error al actualizar estado", "", "error");
+        }
+    };
+
+
     return {
         //exporta nuestro hook
         getSprints,
@@ -95,6 +136,8 @@ export const useSprint = () => {
         updateSprint,
         deleteSprint, addTaskToSprint,
         updateTaskInSprint,
+        deleteTaskInSprint,
+        actualizarEstadoTarea,
         sprints,
 
     }

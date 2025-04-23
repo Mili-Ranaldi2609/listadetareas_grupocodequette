@@ -27,6 +27,11 @@
     border-color: #74d4fd;
     height: 35px;
     width: 10vw;
+
+    display: flex;               /* Para alinear texto e ícono */
+    align-items: center;        /* Centrar verticalmente */
+    justify-content: center;    /* Centrar horizontalmente */
+    gap: 0.4rem;                /* Espacio entre texto e ícono */
 }
 
 .containerTitleAndButton button:hover {

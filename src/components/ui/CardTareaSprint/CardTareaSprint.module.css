@@ -6,9 +6,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 18vw;
-    height: 18vh;
-    max-width: 18vw;
+    width: 20vw;
+    height: 20vh;
+    max-width: 21vw;
     padding: 1rem;
     border-radius: 1rem;
     justify-content: space-between;
@@ -34,6 +34,7 @@
     flex-direction: column;
     justify-content:flex-start;
     flex: 1;
+    text-align: start;
     gap: 0.3rem;
 }
 
@@ -52,21 +53,22 @@
 }
 
 .buttonEliminar button {
-    background-color: rgb(251, 117, 213);
     border-radius: .5rem;
     border: none;
     cursor: pointer;
     padding: 0.2rem;
-    transition: background-color 0.3s ease-in-out;
+    background: none;
 }
 
 .buttonEliminar button:hover {
-    background-color: rgb(255, 0, 204);
+    background-color: rgb(208, 127, 237);
 }
+
 
 /* Botones de editar y ver */
 .buttonEditar button,
-.buttonVer button {
+.buttonVer button,
+.buttonCambioEstado button{
     background: none;
     border: none;
     cursor: pointer;
@@ -74,13 +76,15 @@
 }
 
 .buttonEditar button:hover,
-.buttonVer button:hover {
-    color: white;
+.buttonVer button:hover,
+.buttonCambioEstado button:hover{
+    color: rgb(211, 206, 206);
 }
 .buttonEnviar_backlog {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: color 0.3s ease-in-out;
 }
 
 .buttonEnviar_backlog button {
@@ -95,6 +99,11 @@
     font-size: 16px;
     cursor: pointer;
 }
+.buttonEnviar_backlog button:hover {
+    border-color: #d82000;
+    color: #d82000;
+}
+
 .buttonEnviar_backlog button i {
     display: flex;
     align-items: center;

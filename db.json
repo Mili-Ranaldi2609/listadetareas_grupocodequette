@@ -9,11 +9,11 @@
         "id": "a5afcbdb-6d04-400d-8180-5364124a541f"
       },
       {
-        "titulo": "nueva tarea",
-        "descripcion": "nueva descripcion 1",
-        "fechaLimite": "2025-04-18",
+        "titulo": "hola",
+        "descripcion": "ssssd",
+        "fechaLimite": "2025-02-12",
         "estado": "pendiente",
-        "id": "0e2ab91c-61f6-4ed1-9319-f67d4fe21b84"
+        "id": "4f4a9d2e-4b71-410a-8a85-3aa68958317d"
       }
     ]
   },
@@ -26,20 +26,6 @@
         "nombre": "Sprint 12233",
         "tareas": [
           {
-            "titulo": "hola",
-            "descripcion": "Mili boluda JIJIJI",
-            "fechaLimite": "2025-04-25",
-            "estado": "en proceso",
-            "id": "7bb0d52e-92bf-4b88-8ce7-9bbe9fad0ac5"
-          },
-          {
-            "titulo": "hola",
-            "descripcion": "ssssd",
-            "fechaLimite": "2025-02-12",
-            "estado": "pendiente",
-            "id": "4f4a9d2e-4b71-410a-8a85-3aa68958317d"
-          },
-          {
             "titulo": "nueva tarea desde una sprint ",
             "descripcion": "descripcion generica ",
             "fechaLimite": "2025-04-04",
@@ -48,9 +34,9 @@
           },
           {
             "titulo": "titulo backlog",
-            "descripcion": "descripcion backlog ",
+            "descripcion": "descripcion backlog 2",
             "fechaLimite": "2025-04-18",
-            "estado": "pendiente",
+            "estado": "en proceso",
             "id": "d3b67d85-9fac-42f1-be48-cef94d880da6"
           }
         ]
@@ -83,11 +69,11 @@
             "id": "bc1f64f1-c346-4e70-8aaa-1453437e1e83"
           },
           {
-            "id": "500",
-            "titulo": "Tarea 3 editada 3",
-            "descripcion": "Estamos en una sprint",
+            "titulo": "nueva tarea",
+            "descripcion": "nueva descripcion 1",
+            "fechaLimite": "2025-04-18",
             "estado": "pendiente",
-            "fechaLimite": "2025-03-05"
+            "id": "0e2ab91c-61f6-4ed1-9319-f67d4fe21b84"
           }
         ]
       },
@@ -111,17 +97,10 @@
             "fechaLimite": "2025-03-06"
           },
           {
-            "titulo": "djjdjjdjdjdjjdjd",
-            "descripcion": "jdjdjdjjddjjdjdjjd",
-            "fechaLimite": "2025-04-20",
-            "estado": "completada",
-            "id": "d919c542-e058-43e9-8982-13330bde0674"
-          },
-          {
             "titulo": "hola",
             "descripcion": "1234567890",
             "fechaLimite": "2025-04-18",
-            "estado": "en proceso",
+            "estado": "pendiente",
             "id": "764a7041-afac-4308-bd29-273aa150b71b"
           }
         ],
